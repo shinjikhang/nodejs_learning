@@ -26,6 +26,9 @@ app.get('/tin-tuc', (req, res) => {
   res.render('tin-tuc');
 });
 
+app.get('/users', (req, res) => {
+  res.render('user');
+});
 
 //Route parameters
 app.get('/users/:userId/books/:bookId', (req, res) => {
