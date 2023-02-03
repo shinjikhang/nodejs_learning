@@ -8,6 +8,11 @@ const port = 3000
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(express.urlencoded({
+  extended: true
+})); //form-param (dung de bat param trong form)
+app.use(express.json()); //raw json
+
 // setup the logger
 app.use(morgan('combined'))
 
@@ -27,6 +32,10 @@ app.get('/tin-tuc', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
+  res.render('user');
+});
+
+app.get('/searchUser', (req, res) => {
   res.render('user');
 });
 
