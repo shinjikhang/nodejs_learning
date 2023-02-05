@@ -1,34 +1,40 @@
 const path = require('path');
-const express = require('express')
-const morgan = require('morgan')
+const express = require('express');
+const morgan = require('morgan');
 const { engine } = require('express-handlebars');
 const { send } = require('process');
 const route = require('./routes');
-const app = express()
-const port = 3000
+const app = express();
+const port = 3000;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.urlencoded({
-  extended: true
-})); //form-param (dung de bat param trong form)
-app.use(express.json()); //raw json
+app.use(
+   
+    express.urlencoded({
+              extended: true,
+    }),
+); //form-param (dung de bat param trong form)
+  app.use(express.json()); //raw json
 
 // -- LOGGER
-app.use(morgan('combined'))
+app.use(morgan('combined'));
 
 //Handlebar engine
-app.engine('hbs', engine({
-  extname: ".hbs"
-}));
+app.engine(
+    'hbs',
+    engine({
+        extname: '.hbs',
+    }),
+);
 app.set('view engine', 'hbs');
 
 //set view handlebar
-app.set("views", path.join(__dirname, 'resources/views'));
+app.set('views', path.join(__dirname, 'resources/views'));
 
 //Route init(default get function index)
 route(app);
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Example app listening on port ${port}`);
+});
