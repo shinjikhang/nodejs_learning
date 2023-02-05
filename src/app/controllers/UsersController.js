@@ -8,7 +8,7 @@ class UsersController {
 
   //[GET] /users/:slug
   show(req, res) {
-    res.send('aaa');
+    res.render('user-show');
   }
 
   //insert
