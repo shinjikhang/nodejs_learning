@@ -6,6 +6,6 @@ function route(app) {
     app.use('/', siteRoute);
 }
 
-var arr = ['a', 'a', 'c'];
+  var arr = ['a', 'a', 'c'];
 
-  module.exports = route;
+module.exports = route;
