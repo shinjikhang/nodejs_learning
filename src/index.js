@@ -10,12 +10,11 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
-   
     express.urlencoded({
-              extended: true,
+        extended: true,
     }),
 ); //form-param (dung de bat param trong form)
-  app.use(express.json()); //raw json
+app.use(express.json()); //raw json
 
 // -- LOGGER
 app.use(morgan('combined'));
