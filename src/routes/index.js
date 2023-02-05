@@ -8,4 +8,4 @@ function route(app) {
 
   var arr = ['a', 'a', 'c'];
 
-module.exports = route;
+  module.exports = route;
